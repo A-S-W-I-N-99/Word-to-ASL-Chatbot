@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Text to ASL 3D Converter</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <div id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p>Loading 3D Hand Model...</p>
+        </div>
+    </div>
+
+    <header>
+        <h1>Text to ASL Converter</h1>
+        <p>Real-time 3D Sign Language Visualization</p>
+    </header>
+
+    <main>
+        <div id="canvas-container">
+            <div id="current-letter-display">Wait...</div>
+        </div>
+
+        <div class="controls-panel">
+            <div class="input-group">
+                <input type="text" id="text-input" placeholder="Type text (A-Z)">
+                <button id="convert-btn">Convert</button>
+            </div>
+
+            <div class="playback-controls">
+                <button id="play-pause-btn">▶</button>
+                <button id="stop-btn">■</button>
+
+                <div class="speed-control">
+                    <label>Speed</label>
+                    <input type="range" id="speed-range" min="0.5" max="2" step="0.1" value="1">
+                    <span id="speed-value">1.0x</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>Built with Three.js</footer>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
